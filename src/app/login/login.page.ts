@@ -18,7 +18,7 @@ export class LoginPage implements OnInit {
 	constructor(
 		private router: Router,
 		private provider: PostProvider,
-		private storage: NativeStorage,
+		public nativeStorage: NativeStorage,
 		public toast: ToastController
 	) { }
 
@@ -62,7 +62,7 @@ export class LoginPage implements OnInit {
 		this.provider.Api(dados, 'login.php').subscribe(async data => {
 			var alert = data['msg'];
 			if (data['success']) {
-				this.storage.setItem('session_storage', data['result']);
+				//this.storage.setItem('session_storage', data['result']);
 				this.router.navigate(['/home']);
 				const toast = await this.toast.create({
 					message: 'Logado com Sucesso',

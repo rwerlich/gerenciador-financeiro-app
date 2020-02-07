@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class PostProvider {
-	server: string = "http://aplicativofinanceiroionic-com-br.umbler.net/api/";
+	server: string = "http://localhost/api-app-financeiro/";
 
 	constructor(private http: HttpClient) {
 
