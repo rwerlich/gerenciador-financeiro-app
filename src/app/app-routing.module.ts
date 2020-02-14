@@ -22,7 +22,8 @@ const routes: Routes = [
   {
     path: 'gastos',
     loadChildren: () => import('./gastos/gastos.module').then( m => m.GastosPageModule)
-  }
+  },
+  { path: 'add-gastos/:id/:motivo/:valor', loadChildren: './add-gastos/add-gastos.module#AddGastosPageModule' },
 ];
 
 @NgModule({
